@@ -62,18 +62,72 @@ namespace GIP_Programmeren
             chkVrijdag.IsChecked = objLeerling.blVrijdag;
         }
 
-        private void UpdateDBDag(CheckBox _chkDag, Leerling _objLeerling)
+        private void UpdateDBDag(string _DBDag, bool _blDag, Leerling _objLeerling)
         {
-            if (_chkDag.IsChecked == true)
-            {
-                
-            }
+            string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
+            MySqlConnection conn = new MySqlConnection(_conn);
+            conn.Open();
+            string _cmd = string.Format("update leerling set {0} = {1} where idLeerlingen = {2}", _DBDag, _blDag, _objLeerling.strIdnummer);
+            MySqlCommand cmd = new MySqlCommand(_cmd, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         private void chkMaandag_Click(object sender, RoutedEventArgs e)
         {
             Leerling objLeerling = (Leerling)lstLeerlingLijst.SelectedItem;
-            UpdateDBDag(chkMaandag, objLeerling);
+            if (objLeerling == null)
+            {
+                return;
+            }
+            else
+            {
+                objLeerling.blMaandag = Convert.ToBoolean(chkMaandag.IsChecked);
+                UpdateDBDag("Monday", objLeerling.blMaandag, objLeerling);
+            }
+            
+        }
+
+        private void chkDinsdag_Click(object sender, RoutedEventArgs e)
+        {
+            Leerling objLeerling = (Leerling)lstLeerlingLijst.SelectedItem;
+            if (objLeerling == null)
+            {
+                return;
+            }
+            else
+            {
+                objLeerling.blDinsdag = Convert.ToBoolean(chkDinsdag.IsChecked);
+                UpdateDBDag("Tuesday", objLeerling.blDinsdag, objLeerling);
+            }
+        }
+
+        private void chkDonderdag_Click(object sender, RoutedEventArgs e)
+        {
+            Leerling objLeerling = (Leerling)lstLeerlingLijst.SelectedItem;
+            if (objLeerling == null)
+            {
+                return;
+            }
+            else
+            {
+                objLeerling.blDonderdag = Convert.ToBoolean(chkDonderdag.IsChecked);
+                UpdateDBDag("Thursday", objLeerling.blDonderdag, objLeerling);
+            }
+        }
+
+        private void chkVrijdag_Click(object sender, RoutedEventArgs e)
+        {
+            Leerling objLeerling = (Leerling)lstLeerlingLijst.SelectedItem;
+            if (objLeerling == null)
+            {
+                return;
+            }
+            else
+            {
+                objLeerling.blVrijdag = Convert.ToBoolean(chkVrijdag.IsChecked);
+                UpdateDBDag("Friday", objLeerling.blVrijdag, objLeerling);
+            }
         }
     }
 }
