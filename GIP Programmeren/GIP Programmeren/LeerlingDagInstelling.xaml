@@ -9,9 +9,10 @@
     <Grid>
         <ListBox Name="lstLeerlingLijst" HorizontalAlignment="Left" Height="534" Margin="37,104,0,0" VerticalAlignment="Top" Width="416" SelectionChanged="lstLeerlingLijst_SelectionChanged"/>
         <CheckBox Name="chkMaandag" Content="Maandag" HorizontalAlignment="Left" Margin="516,154,0,0" VerticalAlignment="Top" Click="chkMaandag_Click"/>
-        <CheckBox Name="chkDinsdag" Content="Dinsdag" HorizontalAlignment="Left" Margin="516,214,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="chkDonderdag" Content="Donderdag" HorizontalAlignment="Left" Margin="516,274,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="chkVrijdag" Content="Vrijdag" HorizontalAlignment="Left" Margin="516,334,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="chkDinsdag" Content="Dinsdag" HorizontalAlignment="Left" Margin="516,214,0,0" VerticalAlignment="Top" Click="chkDinsdag_Click"/>
+        <CheckBox Name="chkDonderdag" Content="Donderdag" HorizontalAlignment="Left" Margin="516,274,0,0" VerticalAlignment="Top" Click="chkDonderdag_Click"/>
+        <CheckBox Name="chkVrijdag" Content="Vrijdag" HorizontalAlignment="Left" Margin="516,334,0,0" VerticalAlignment="Top" Click="chkVrijdag_Click"/>
+        <Label Name="pinokio" Content="Label" HorizontalAlignment="Left" Margin="917,169,0,0" VerticalAlignment="Top" Height="102" Width="195"/>
 
     </Grid>
 </Window>
