@@ -29,13 +29,25 @@ namespace GIP_Programmeren
             get { return _jaar; }
             set { _jaar = value; }
         }
-        
+
         public void VoegKlasToeAanDB()
         {
 
         }
 
         public void VerwijderKlasUitDB()
+        {
+
+        }
+
+        public Klas(String richting, int jaar, DateTime tijdstip)
+        {
+            _richting = richting;
+            _tijdstip = tijdstip;
+            _jaar = jaar;
+        }
+
+        public Klas()
         {
 
         }
