@@ -11,7 +11,6 @@ namespace GIP_Programmeren
         private DateTime _tijdstip;
         private String _richting;
         private int _jaar;
-        private List<Leerling> = new List<Leerling>();
 
         public DateTime dtTijdstip
         {
@@ -31,7 +30,15 @@ namespace GIP_Programmeren
             set { _jaar = value; }
         }
         
+        public void VoegKlasToeAanDB()
+        {
 
+        }
+
+        public void VerwijderKlasUitDB()
+        {
+
+        }
 
     }
 }
