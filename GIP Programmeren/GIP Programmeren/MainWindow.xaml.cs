@@ -30,6 +30,7 @@ namespace GIP_Programmeren
             AanwezigheidScan objAanwezigheidScan = new AanwezigheidScan();
 
             objAanwezigheidScan.Show();
+            
         }
     }
 }

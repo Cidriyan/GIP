@@ -81,10 +81,6 @@ namespace GIP_Programmeren
 
         public void VoegLeerlingToeAanDB()
         {
-            string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", strPassword);
-            MySqlConnection conn = new MySqlConnection(_conn);
-            string _cmd = string.Format("INSERT INTO Leerling ('', '', '', '')",)
-            MySqlCommand cmd = 
 
 
 

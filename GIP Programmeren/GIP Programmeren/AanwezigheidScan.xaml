@@ -12,8 +12,8 @@
 		<Image x:Name="imgFoto2" HorizontalAlignment="Left" Height="150" Margin="881,182,0,0" VerticalAlignment="Top" Width="309"/>
 		<Image x:Name="imgFoto3" HorizontalAlignment="Left" Height="150" Margin="881,332,0,0" VerticalAlignment="Top" Width="309"/>
 		<Image x:Name="imgFoto4" HorizontalAlignment="Left" Height="151" Margin="881,482,0,0" VerticalAlignment="Top" Width="309"/>
-		<Label Name="lblNaam" Content="" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top" FontSize="36"/>
-		<Label x:Name="lblKlas" Content="" HorizontalAlignment="Left" Margin="479,171,0,0" VerticalAlignment="Top" FontSize="36"/>
+		<Label Name="lblNaam" Content="Oliver Boombiers" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top" FontSize="36"/>
+		<Label x:Name="lblKlas" Content="6 BUSO" HorizontalAlignment="Left" Margin="479,171,0,0" VerticalAlignment="Top" FontSize="36"/>
 
 	</Grid>
 </Window>
