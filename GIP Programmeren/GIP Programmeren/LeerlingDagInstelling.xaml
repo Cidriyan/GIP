@@ -12,7 +12,6 @@
         <CheckBox Name="chkDinsdag" Content="Dinsdag" HorizontalAlignment="Left" Margin="516,214,0,0" VerticalAlignment="Top" Click="chkDinsdag_Click" FontFamily="Comic Sans MS"/>
         <CheckBox Name="chkDonderdag" Content="Donderdag" HorizontalAlignment="Left" Margin="516,274,0,0" VerticalAlignment="Top" Click="chkDonderdag_Click" FontFamily="Comic Sans MS"/>
         <CheckBox Name="chkVrijdag" Content="Vrijdag" HorizontalAlignment="Left" Margin="516,334,0,0" VerticalAlignment="Top" Click="chkVrijdag_Click" FontFamily="Comic Sans MS"/>
-        <Label Name="pinokio" Content="Label" HorizontalAlignment="Left" Margin="917,169,0,0" VerticalAlignment="Top" Height="102" Width="195"/>
 
     </Grid>
 </Window>

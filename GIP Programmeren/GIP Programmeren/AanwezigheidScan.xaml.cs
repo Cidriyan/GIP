@@ -23,7 +23,19 @@ namespace GIP_Programmeren
         {
             InitializeComponent();
         }
-        
 
+        public void FotoVerplaatsen()
+        {
+            imgFoto1.Source = imgFoto2.Source;
+            imgFoto2.Source = imgFoto3.Source;
+            imgFoto3.Source = imgFoto4.Source;
+            imgFoto4.Source = imgFotoMain.Source;
+
+        }
+
+        private void btnFotoVerplaatsen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
