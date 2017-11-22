@@ -15,5 +15,5 @@
 		<Label Name="lblNaam" Content="" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top" FontSize="36"/>
 		<Label x:Name="lblKlas" Content="" HorizontalAlignment="Left" Margin="479,171,0,0" VerticalAlignment="Top" FontSize="36"/>
 
-	</Grid>
+    </Grid>
 </Window>

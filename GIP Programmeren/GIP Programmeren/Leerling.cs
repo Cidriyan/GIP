@@ -95,7 +95,7 @@ namespace GIP_Programmeren
 
         public override string ToString()
         {
-            return intKlasnummer + " " + strAchternaam + " " + strVoornaam ;
+            return strAchternaam + " " + strVoornaam ;
         }
 
         public Leerling(string _strPW)
