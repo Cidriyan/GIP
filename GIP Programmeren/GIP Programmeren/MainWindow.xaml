@@ -6,5 +6,7 @@
         xmlns:local="clr-namespace:GIP_Programmeren"
         mc:Ignorable="d"
         Title="Refter RFID Interface" Height="720" Width="1280">
-    <Grid/>
+    <Grid>
+		<Button Content="Start" HorizontalAlignment="Left" Height="43" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" FontSize="18" Click="Button_Click"/>
+	</Grid>
 </Window>

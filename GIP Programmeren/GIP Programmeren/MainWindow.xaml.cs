@@ -24,5 +24,16 @@ namespace GIP_Programmeren
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //AanwezigheidScan objAanwezigheidScan = new AanwezigheidScan();
+
+            //objAanwezigheidScan.Show();
+
+            LeerlingDagInstelling objLLDagInstelling = new LeerlingDagInstelling();
+            objLLDagInstelling.Show();
+
+        }
     }
 }

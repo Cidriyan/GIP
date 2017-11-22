@@ -6,15 +6,14 @@
         xmlns:local="clr-namespace:GIP_Programmeren"
         mc:Ignorable="d"
         Title="AanwezigheidScan" Height="720" Width="1280">
-    <Grid>
-        <Image Name="imgFotoMain" HorizontalAlignment="Left" Height="596" Margin="30,37,0,0" VerticalAlignment="Top" Width="426"/>
-        <Image Name="imgFoto1" HorizontalAlignment="Left" Height="151" Margin="881,31,0,0" VerticalAlignment="Top" Width="309"/>
-        <Image x:Name="imgFoto2" HorizontalAlignment="Left" Height="150" Margin="881,182,0,0" VerticalAlignment="Top" Width="309"/>
-        <Image x:Name="imgFoto3" HorizontalAlignment="Left" Height="150" Margin="881,332,0,0" VerticalAlignment="Top" Width="309"/>
-        <Image x:Name="imgFoto4" HorizontalAlignment="Left" Height="151" Margin="881,482,0,0" VerticalAlignment="Top" Width="309"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="476,70,0,0" VerticalAlignment="Top" Width="95" Height="46"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="576,70,0,0" VerticalAlignment="Top" Width="95" Height="46"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="676,70,0,0" VerticalAlignment="Top" Width="95" Height="46"/>
+	<Grid>
+		<Image Name="imgFotoMain" HorizontalAlignment="Left" Height="596" Margin="30,37,0,0" VerticalAlignment="Top" Width="426"/>
+		<Image Name="imgFoto1" HorizontalAlignment="Left" Height="151" Margin="881,31,0,0" VerticalAlignment="Top" Width="309"/>
+		<Image x:Name="imgFoto2" HorizontalAlignment="Left" Height="150" Margin="881,182,0,0" VerticalAlignment="Top" Width="309"/>
+		<Image x:Name="imgFoto3" HorizontalAlignment="Left" Height="150" Margin="881,332,0,0" VerticalAlignment="Top" Width="309"/>
+		<Image x:Name="imgFoto4" HorizontalAlignment="Left" Height="151" Margin="881,482,0,0" VerticalAlignment="Top" Width="309"/>
+		<Label Name="lblNaam" Content="" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top" FontSize="36"/>
+		<Label x:Name="lblKlas" Content="" HorizontalAlignment="Left" Margin="479,171,0,0" VerticalAlignment="Top" FontSize="36"/>
 
-    </Grid>
+	</Grid>
 </Window>
