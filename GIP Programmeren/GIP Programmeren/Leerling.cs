@@ -8,10 +8,16 @@ namespace GIP_Programmeren
 {
     class Leerling
     {
-
+        private string _idnummer;
         private int _klasnummer;
         private string _voornaam;
         private string _achternaam;
+
+        public string strIdnummer
+        {
+            get { return _idnummer; }
+            set { _idnummer = value; }
+        }
 
         public int intKlasnummer
         {
@@ -29,6 +35,16 @@ namespace GIP_Programmeren
         {
             get { return _achternaam; }
             set { _achternaam = value; }
+        }
+
+        public void VoegLeerlingToeAanDB()
+        {
+
+        }
+
+        public void VerwijderLeerlingUitDB()
+        {
+
         }
 
 
