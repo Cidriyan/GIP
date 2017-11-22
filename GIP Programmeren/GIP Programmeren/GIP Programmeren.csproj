@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LeerlingDagInstelling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LijstLeerlingen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,6 +80,9 @@
     </Compile>
     <Compile Include="Klas.cs" />
     <Compile Include="Leerling.cs" />
+    <Compile Include="LeerlingDagInstelling.xaml.cs">
+      <DependentUpon>LeerlingDagInstelling.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LijstLeerlingen.xaml.cs">
       <DependentUpon>LijstLeerlingen.xaml</DependentUpon>
     </Compile>

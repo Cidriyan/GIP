@@ -62,13 +62,13 @@ namespace GIP_Programmeren
             set { _dinsdag = value; }
         }
 
-        public bool bldonderdag
+        public bool blDonderdag
         {
             get { return _donderdag; }
             set { _donderdag = value; }
         }
 
-        public bool blvrijdag
+        public bool blVrijdag
         {
             get { return _vrijdag; }
             set { _vrijdag = value; }
@@ -91,10 +91,29 @@ namespace GIP_Programmeren
         {
 
         }
+        
+
+        public override string ToString()
+        {
+            return intKlasnummer + " " + strAchternaam + " " + strVoornaam ;
+        }
 
         public Leerling(string _strPW)
         {
             strPassword = _strPW;
+        }
+
+        public Leerling(string _idLeerling, string _Voornaam, string _Achternaam, int _Klasnummer, bool _Maandag, bool _Dinsdag, bool _Donderdag, bool _Vrijdag)
+        {
+            strIdnummer = _idLeerling;
+            strVoornaam = _Voornaam;
+            strAchternaam = _Achternaam;
+            intKlasnummer = _Klasnummer;
+            blMaandag = _Maandag;
+            blDinsdag = _Dinsdag;
+            blDonderdag = _Donderdag;
+            blVrijdag = _Vrijdag;
+
         }
 
 
