@@ -42,6 +42,18 @@ namespace GIP_Programmeren
 
             conn.Close();
         }
+
+        private void UpdateDBStatus()
+        {
+            string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
+            MySqlConnection conn = new MySqlConnection(_conn);
+            conn.Open();
+            string _cmd = string.Format("");
+            MySqlCommand cmd = new MySqlCommand(_cmd, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
