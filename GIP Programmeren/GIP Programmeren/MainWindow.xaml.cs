@@ -41,5 +41,12 @@ namespace GIP_Programmeren
             objAanwezigheidScan.Show();
 
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            LijstLeerlingen objLijstLeerlingen = new LijstLeerlingen();
+
+            objLijstLeerlingen.Show();
+        }
     }
 }
