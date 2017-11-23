@@ -46,5 +46,24 @@ namespace GIP_Programmeren
         {
 
         }
+
+        private void txtZoekNaam_KeyUp(object sender, KeyEventArgs e)
+        {
+            string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
+            MySqlConnection conn = new MySqlConnection(_conn);
+            conn.Open();
+            string _cmd = string.Format("SELECT * from leerling where LeerlingVNaam like '{0}%' ", txtZoekNaam.Text);
+            MySqlCommand cmd = new MySqlCommand(_cmd, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            lstLeerlingenLijst.Items.Clear();
+            while (dr.Read())
+            {
+                
+                Leerling objLeerling = new Leerling(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), Convert.ToInt16(dr[3]), Convert.ToBoolean(dr[4]), Convert.ToBoolean(dr[5]), Convert.ToBoolean(dr[6]), Convert.ToBoolean(dr[7]));
+                lstLeerlingenLijst.Items.Add(objLeerling);
+            }
+
+            conn.Close();
+        }
     }
 }
