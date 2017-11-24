@@ -25,10 +25,10 @@ namespace GIP_Programmeren
         public AanwezigheidScan()
         {
             InitializeComponent();
-            strfileName = txtImage.Text;
-            strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "@LeerlingFoto's/", "TestFoto.jpg");
-            Uri imageUri = new Uri("C:/Users/Denzel/Source/Repos/GIP/GIP Programmeren/GIP Programmeren/bin/Debug/Data/LeerlingFoto's/TestFoto.png");
-            imgFotoMain.Source = new BitmapImage(imageUri);
+            //strfileName = txtImage.Text;
+            //strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "@LeerlingFoto's/", "TestFoto.jpg");
+            //Uri imageUri = new Uri("C:/Users/Denzel/Source/Repos/GIP/GIP Programmeren/GIP Programmeren/bin/Debug/Data/LeerlingFoto's/TestFoto.png");
+            //imgFotoMain.Source = new BitmapImage(imageUri);
         }
 
         public void FotoVerplaatsen()
@@ -40,12 +40,12 @@ namespace GIP_Programmeren
             strfileName = txtImage.Text;
             strPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"LeerlingFoto's/", txtImage.Text);
             txtImage.Text = strPath;
-            //Uri imageUri = new Uri(strPath);
-            //imgFotoMain.Source = new BitmapImage(imageUri);
-            //imgFoto1.Source = imgFoto2.Source;
-            //imgFoto2.Source = imgFoto3.Source;
-            //imgFoto3.Source = imgFoto4.Source;
-            //imgFoto4.Source = imgFotoMain.Source;
+            Uri imageUri = new Uri(strPath);
+            imgFotoMain.Source = new BitmapImage(imageUri);
+            imgFoto1.Source = imgFoto2.Source;
+            imgFoto2.Source = imgFoto3.Source;
+            imgFoto3.Source = imgFoto4.Source;
+            imgFoto4.Source = imgFotoMain.Source;
 
         }
 
