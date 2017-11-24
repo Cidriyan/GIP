@@ -22,6 +22,29 @@ namespace GIP_Programmeren
         public AanwezigheidScan()
         {
             InitializeComponent();
+            
+            Uri imageUri = new Uri("C:/Users/Denzel/Source/Repos/GIP/GIP Programmeren/GIP Programmeren/LeerlingFoto's/TestFoto.png");
+            imgFotoMain.Source = new BitmapImage(imageUri);
+        }
+
+        public void FotoVerplaatsen()
+        {
+            if (txtImage.Text == null)
+            {
+                return;
+            }
+            Uri imageUri = new Uri(String.Format("C:/Users/Denzel/Source/Repos/GIP/GIP Programmeren/GIP Programmeren/LeerlingFoto's/{0}", txtImage.Text));
+            imgFotoMain.Source = new BitmapImage(imageUri);
+            imgFoto1.Source = imgFoto2.Source;
+            imgFoto2.Source = imgFoto3.Source;
+            imgFoto3.Source = imgFoto4.Source;
+            imgFoto4.Source = imgFotoMain.Source;
+
+        }
+
+        private void btnFotoVerplaatsen_Click(object sender, RoutedEventArgs e)
+        {
+            FotoVerplaatsen();
         }
     }
 }

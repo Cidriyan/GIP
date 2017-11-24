@@ -24,5 +24,29 @@ namespace GIP_Programmeren
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            LeerlingDagInstelling objLLDagInstelling = new LeerlingDagInstelling();
+            objLLDagInstelling.Show();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AanwezigheidScan objAanwezigheidScan = new AanwezigheidScan();
+
+            objAanwezigheidScan.Show();
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            LijstLeerlingen objLijstLeerlingen = new LijstLeerlingen();
+
+            objLijstLeerlingen.Show();
+        }
     }
 }

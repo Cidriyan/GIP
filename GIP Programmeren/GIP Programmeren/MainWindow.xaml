@@ -6,5 +6,9 @@
         xmlns:local="clr-namespace:GIP_Programmeren"
         mc:Ignorable="d"
         Title="Refter RFID Interface" Height="720" Width="1280">
-    <Grid/>
+    <Grid>
+        <Button Name="btnAanwezigheidScan" Content="Lijst van&#xD;&#xA;de leerlingen" HorizontalAlignment="Left" Height="115" Margin="128,103,0,0" VerticalAlignment="Top" Width="218" FontSize="18" FontFamily="Comic Sans MS" Click="Button_Click_1"/>
+        <Button Name="btnLLInstelling" Content="Dageninstellingen&#xD;&#xA;leerlingen" HorizontalAlignment="Left" Height="115" Margin="916,103,0,0" VerticalAlignment="Top" Width="218" FontSize="18" Click="Button_Click" FontFamily="Comic Sans MS"/>
+        <Button Content="Lijst van de leerlingen" HorizontalAlignment="Left" Height="113" Margin="128,392,0,0" VerticalAlignment="Top" Width="218" Click="Button_Click_2"/>
+    </Grid>
 </Window>

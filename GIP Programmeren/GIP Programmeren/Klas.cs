@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace GIP_Programmeren
 {
@@ -29,13 +31,30 @@ namespace GIP_Programmeren
             get { return _jaar; }
             set { _jaar = value; }
         }
-        
+
         public void VoegKlasToeAanDB()
         {
 
         }
 
         public void VerwijderKlasUitDB()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return _richting;
+        }
+
+        public Klas(String richting, int jaar, DateTime tijdstip)
+        {
+            _richting = richting;
+            _tijdstip = tijdstip;
+            _jaar = jaar;
+        }
+
+        public Klas()
         {
 
         }

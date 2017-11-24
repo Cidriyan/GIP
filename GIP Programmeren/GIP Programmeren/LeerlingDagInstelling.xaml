@@ -1,0 +1,17 @@
+﻿<Window x:Class="GIP_Programmeren.LeerlingDagInstelling"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GIP_Programmeren"
+        mc:Ignorable="d"
+        Title="LeerlingDagInstelling" Height="720" Width="1280">
+    <Grid>
+        <ListBox Name="lstLeerlingLijst" HorizontalAlignment="Left" Height="534" Margin="37,104,0,0" VerticalAlignment="Top" Width="416" SelectionChanged="lstLeerlingLijst_SelectionChanged" FontFamily="Comic Sans MS"/>
+        <CheckBox Name="chkMaandag" Content="Maandag" HorizontalAlignment="Left" Margin="516,154,0,0" VerticalAlignment="Top" Click="chkMaandag_Click" FontFamily="Comic Sans MS"/>
+        <CheckBox Name="chkDinsdag" Content="Dinsdag" HorizontalAlignment="Left" Margin="516,214,0,0" VerticalAlignment="Top" Click="chkDinsdag_Click" FontFamily="Comic Sans MS"/>
+        <CheckBox Name="chkDonderdag" Content="Donderdag" HorizontalAlignment="Left" Margin="516,274,0,0" VerticalAlignment="Top" Click="chkDonderdag_Click" FontFamily="Comic Sans MS"/>
+        <CheckBox Name="chkVrijdag" Content="Vrijdag" HorizontalAlignment="Left" Margin="516,334,0,0" VerticalAlignment="Top" Click="chkVrijdag_Click" FontFamily="Comic Sans MS"/>
+
+    </Grid>
+</Window>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace GIP_Programmeren
 {
@@ -12,6 +14,11 @@ namespace GIP_Programmeren
         private int _klasnummer;
         private string _voornaam;
         private string _achternaam;
+        private string _password;
+        private bool _maandag;
+        private bool _dinsdag;
+        private bool _donderdag;
+        private bool _vrijdag;
 
         public string strIdnummer
         {
@@ -37,8 +44,46 @@ namespace GIP_Programmeren
             set { _achternaam = value; }
         }
 
+        public string strPassword
+        {
+            get { return _password; }
+            set { _password = value; }
+        }
+
+        public bool blMaandag
+        {
+            get { return _maandag; }
+            set { _maandag = value; }
+        }
+
+        public bool blDinsdag
+        {
+            get { return _dinsdag; }
+            set { _dinsdag = value; }
+        }
+
+        public bool blDonderdag
+        {
+            get { return _donderdag; }
+            set { _donderdag = value; }
+        }
+
+        public bool blVrijdag
+        {
+            get { return _vrijdag; }
+            set { _vrijdag = value; }
+        }
+
+
+
+
+
+
         public void VoegLeerlingToeAanDB()
         {
+
+
+
 
         }
 
@@ -46,7 +91,30 @@ namespace GIP_Programmeren
         {
 
         }
+        
 
+        public override string ToString()
+        {
+            return strAchternaam + " " + strVoornaam ;
+        }
+
+        public Leerling(string _strPW)
+        {
+            strPassword = _strPW;
+        }
+
+        public Leerling(string _idLeerling, string _Voornaam, string _Achternaam, int _Klasnummer, bool _Maandag, bool _Dinsdag, bool _Donderdag, bool _Vrijdag)
+        {
+            strIdnummer = _idLeerling;
+            strVoornaam = _Voornaam;
+            strAchternaam = _Achternaam;
+            intKlasnummer = _Klasnummer;
+            blMaandag = _Maandag;
+            blDinsdag = _Dinsdag;
+            blDonderdag = _Donderdag;
+            blVrijdag = _Vrijdag;
+
+        }
 
 
     }

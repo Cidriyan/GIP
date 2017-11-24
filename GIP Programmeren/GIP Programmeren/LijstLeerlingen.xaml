@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GIP_Programmeren"
         mc:Ignorable="d"
-        Title="LijstLeerlingen" Height="300" Width="300">
+        Title="LijstLeerlingen" Height="780" Width="1280">
     <Grid>
-        
+        <ListBox Name="lstLeerlingenLijst" HorizontalAlignment="Left" Height="655" Margin="10,84,0,0" VerticalAlignment="Top" Width="568" SelectionChanged="ListBox_SelectionChanged"/>
+        <RadioButton Content="Aanwezig" HorizontalAlignment="Left" Margin="695,84,0,0" VerticalAlignment="Top" GroupName="Status"/>
+        <RadioButton Content="Te Laat" HorizontalAlignment="Left" Margin="695,104,0,0" VerticalAlignment="Top" GroupName="Status"/>
+        <RadioButton Content="Te Laat met reden" HorizontalAlignment="Left" Margin="695,124,0,0" VerticalAlignment="Top" GroupName="Status"/>
+        <Label Name="lblLeerlingNaam" Content="" HorizontalAlignment="Left" Margin="695,53,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Afwezig" HorizontalAlignment="Left" Margin="695,144,0,0" VerticalAlignment="Top" GroupName="Status"/>
+        <TextBox Name="txtZoekNaam" HorizontalAlignment="Left" Height="22" Margin="91,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" KeyUp="txtZoekNaam_KeyUp"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
