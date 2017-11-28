@@ -26,8 +26,8 @@ namespace GIP_Programmeren
         {
             InitializeComponent();
             strfileName = txtImage.Text;
-            strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "@LeerlingFoto's/", "TestFoto.jpg");
-            Uri imageUri = new Uri("C:/Users/Denzel/Source/Repos/GIP/GIP Programmeren/GIP Programmeren/bin/Debug/Data/LeerlingFoto's/TestFoto.png");
+            strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Data/LeerlingFoto's/", "TestFoto.png");
+            Uri imageUri = new Uri(strPath);
             imgFotoMain.Source = new BitmapImage(imageUri);
         }
 
@@ -38,15 +38,15 @@ namespace GIP_Programmeren
                 return;
             }
             strfileName = txtImage.Text;
-            strPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"LeerlingFoto's/", txtImage.Text);
+            strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Data/LeerlingFoto's/", txtImage.Text);
             txtImage.Text = strPath;
-            //Uri imageUri = new Uri(strPath);
-            //imgFotoMain.Source = new BitmapImage(imageUri);
-            //imgFoto1.Source = imgFoto2.Source;
-            //imgFoto2.Source = imgFoto3.Source;
-            //imgFoto3.Source = imgFoto4.Source;
-            //imgFoto4.Source = imgFotoMain.Source;
-
+            Uri imageUri = new Uri(strPath);
+            
+            imgFoto1.Source = imgFoto2.Source;
+            imgFoto2.Source = imgFoto3.Source;
+            imgFoto3.Source = imgFoto4.Source;
+            imgFoto4.Source = imgFotoMain.Source;
+            imgFotoMain.Source = new BitmapImage(imageUri);
         }
 
         private void btnFotoVerplaatsen_Click(object sender, RoutedEventArgs e)
