@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO.Ports;
 
 namespace GIP_Programmeren
 {
@@ -53,5 +54,52 @@ namespace GIP_Programmeren
         {
             FotoVerplaatsen();
         }
+
+
+
+
+
+        public delegate void NoArgDelegate();
+        static SerialPort Sp;
+        string portName = "COM4";
+        string data;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Sp = new SerialPort();
+            Sp.PortName = portName;
+            Sp.BaudRate = 9600;
+            Sp.Open();
+            Sp.DataReceived += this._OnDataRecieved;
+        }
+
+
+
+
+        private void _OnDataRecieved(object sender, SerialDataReceivedEventArgs e)
+        {
+            base.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Send, (NoArgDelegate)delegate
+            {
+                data = Sp.ReadExisting();
+                txtImage.Text = data;
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        
     }
 }
