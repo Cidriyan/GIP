@@ -48,7 +48,7 @@ namespace GIP_Programmeren
             string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
             MySqlConnection conn = new MySqlConnection(_conn);
             conn.Open();
-            string _cmd = string.Format("update aanwezigheidslijst set Status_idStatus = {1} where Leerling_idLeerlingen = {2}", _CkStatus, _objLeerling.strIdnummer);
+            string _cmd = string.Format("update aanwezigheidslijst set Status_idStatus = {0} where Leerling_idLeerlingen = {1}", _CkStatus, _objLeerling.strIdnummer);
             MySqlCommand cmd = new MySqlCommand(_cmd, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
