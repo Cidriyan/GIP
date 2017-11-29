@@ -58,5 +58,10 @@ namespace GIP_Programmeren
         {
 
         }
+        
+        public void Test()
+        {
+            int a = 1 + 1;
+        }
     }
 }

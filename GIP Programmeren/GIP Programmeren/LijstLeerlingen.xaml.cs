@@ -56,7 +56,7 @@ namespace GIP_Programmeren
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void txtZoekNaam_KeyUp(object sender, KeyEventArgs e)
