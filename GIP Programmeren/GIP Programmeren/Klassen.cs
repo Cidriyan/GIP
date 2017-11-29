@@ -10,8 +10,15 @@ namespace GIP_Programmeren
     class Klassen
     {
         private string _Klassen;
+        private int _idKlassen;
 
-        public string strKlassen
+        public int intidKlassen
+        {
+            get { return _idKlassen; }
+            set { _idKlassen = value; }
+        }
+
+        public string strKlasNaam
         {
             get { return _Klassen; }
             set { _Klassen = value; }
@@ -25,9 +32,15 @@ namespace GIP_Programmeren
         {
 
         }
-        public Klassen(string _Klassen)
+        public Klassen(string _Klassen, int _idKlassen)
         {
-            strKlassen = _Klassen;
+            strKlasNaam = _Klassen;
+            intidKlassen = _idKlassen;
         }
+        public override string ToString()
+        {
+            return strKlasNaam;
+        }
+
     }
 }
