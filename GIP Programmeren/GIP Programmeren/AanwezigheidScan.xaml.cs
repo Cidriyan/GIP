@@ -80,7 +80,7 @@ namespace GIP_Programmeren
                     Sp.Close();
                 }
                 Sp.Open();
-                Sp.DataReceived += this._OnDataRecieved;
+                Sp.DataReceived += _OnDataRecieved;
 
             }
         }
