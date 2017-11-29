@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO.Ports;
 
 namespace GIP_Programmeren
 {
@@ -19,34 +22,89 @@ namespace GIP_Programmeren
     /// </summary>
     public partial class AanwezigheidScan : Window
     {
+        string strfileName;
+        string strPath;
         public AanwezigheidScan()
         {
             InitializeComponent();
-            
-            Uri imageUri = new Uri("C:/Users/Denzel/Source/Repos/GIP/GIP Programmeren/GIP Programmeren/LeerlingFoto's/TestFoto.png");
+            strfileName = txtImage.Text;
+            strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Data/LeerlingFoto's/", "TestFoto.png");
+            Uri imageUri = new Uri(strPath);
             imgFotoMain.Source = new BitmapImage(imageUri);
         }
 
         public void FotoVerplaatsen()
         {
-
             if (txtImage.Text == null)
             {
                 return;
             }
+            strfileName = txtImage.Text;
+            strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Data/LeerlingFoto's/", txtImage.Text);
+            txtImage.Text = strPath;
+            Uri imageUri = new Uri(strPath);
+            
             imgFoto1.Source = imgFoto2.Source;
             imgFoto2.Source = imgFoto3.Source;
             imgFoto3.Source = imgFoto4.Source;
             imgFoto4.Source = imgFotoMain.Source;
-            Uri imageUri = new Uri(String.Format("C:/Users/Denzel/Source/Repos/GIP/GIP Programmeren/GIP Programmeren/LeerlingFoto's/{0}", txtImage.Text));
             imgFotoMain.Source = new BitmapImage(imageUri);
-            
-
         }
 
         private void btnFotoVerplaatsen_Click(object sender, RoutedEventArgs e)
         {
             FotoVerplaatsen();
         }
+
+
+
+
+
+        public delegate void NoArgDelegate();
+        static SerialPort Sp;
+        string portName = "COM3";
+        string data;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (Sp = new SerialPort())
+            {
+                
+                Sp.PortName = portName;
+                Sp.BaudRate = 9600;
+                Sp.Parity = Parity.None;
+                Sp.StopBits = StopBits.One;
+                Sp.DataBits = 8;
+                Sp.Handshake = Handshake.None;
+                if (Sp.IsOpen == true)
+                {
+                    Sp.Close();
+                }
+                Sp.Open();
+                Sp.DataReceived += this._OnDataRecieved;
+
+            }
+        }
+
+
+
+
+        private void _OnDataRecieved(object sender, SerialDataReceivedEventArgs e)
+        {
+            base.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Send, (NoArgDelegate)delegate
+            {
+                SerialPort Sp = (SerialPort)sender;
+                data = Sp.ReadLine();
+                txtImage.Text = "K";
+                txtImage.Text = data;
+            });
+
+
+
+
+            
+        }
+        
+
+        
     }
 }

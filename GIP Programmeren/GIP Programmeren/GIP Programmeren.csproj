@@ -34,7 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.10.3\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -63,6 +65,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LeerlingLinkenAanKaart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LijstLeerlingen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Aanwezigheid.cs" />
     <Compile Include="AanwezigheidScan.xaml.cs">
       <DependentUpon>AanwezigheidScan.xaml</DependentUpon>
     </Compile>
@@ -79,9 +86,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Klas.cs" />
+    <Compile Include="Klassen.cs" />
     <Compile Include="Leerling.cs" />
     <Compile Include="LeerlingDagInstelling.xaml.cs">
       <DependentUpon>LeerlingDagInstelling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeerlingLinkenAanKaart.xaml.cs">
+      <DependentUpon>LeerlingLinkenAanKaart.xaml</DependentUpon>
     </Compile>
     <Compile Include="LijstLeerlingen.xaml.cs">
       <DependentUpon>LijstLeerlingen.xaml</DependentUpon>
