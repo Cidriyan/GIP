@@ -8,6 +8,9 @@ namespace GIP_Programmeren
 {
     class Aanwezigheid
     {
+        DateTime AankomstTijd;
+        String StatusId;
+
 
     }
 }
