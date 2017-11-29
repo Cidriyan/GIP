@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LeerlingLinkenAanKaart" Height="720" Width="1280">
     <Grid>
-        <ListBox x:Name="LitBox" HorizontalAlignment="Left" Height="551" Margin="32,68,0,0" VerticalAlignment="Top" Width="344"/>
+        <ListBox x:Name="LitBox" HorizontalAlignment="Left" Height="551" Margin="32,68,0,0" VerticalAlignment="Top" Width="344" SelectionChanged="LitBox_SelectionChanged"/>
         <Label Content="Klassen" HorizontalAlignment="Left" Margin="32,37,0,0" VerticalAlignment="Top"/>
 
     </Grid>

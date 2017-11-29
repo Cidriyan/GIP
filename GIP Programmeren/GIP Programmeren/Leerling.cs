@@ -115,6 +115,11 @@ namespace GIP_Programmeren
             blVrijdag = _Vrijdag;
 
         }
+        public Leerling(string _Voornaam, string _Achternaam)
+        {
+            strVoornaam = _Voornaam;
+            strAchternaam = _Achternaam;
+        }
 
 
     }

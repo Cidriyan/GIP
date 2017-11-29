@@ -48,5 +48,11 @@ namespace GIP_Programmeren
 
             objLijstLeerlingen.Show();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            LeerlingLinkenAanKaart objLeerlingLinkenAanKaart = new LeerlingLinkenAanKaart();
+            objLeerlingLinkenAanKaart.Show();
+        }
     }
 }
