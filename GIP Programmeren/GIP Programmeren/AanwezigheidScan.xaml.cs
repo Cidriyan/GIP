@@ -61,17 +61,24 @@ namespace GIP_Programmeren
 
         public delegate void NoArgDelegate();
         static SerialPort Sp;
+
         string portName = "COM4";
         string data;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Sp = new SerialPort();
-            Sp.PortName = portName;
-            Sp.BaudRate = 9600;
-            Sp.Open();
-            Sp.DataReceived += this._OnDataRecieved;
+            using (Sp = new SerialPort())
+            {
+                ;
+                Sp.PortName = portName;
+                Sp.BaudRate = 9600;
+                if (Sp.IsOpen == true)
+                {
+                    Sp.Close();
+                }
+                Sp.Open();
+                Sp.DataReceived += this._OnDataRecieved;
+            }
         }
-
 
 
 
