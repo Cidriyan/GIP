@@ -42,6 +42,11 @@ namespace GIP_Programmeren
 
         }
 
+        public override string ToString()
+        {
+            return _richting;
+        }
+
         public Klas(String richting, int jaar, DateTime tijdstip)
         {
             _richting = richting;
@@ -52,6 +57,11 @@ namespace GIP_Programmeren
         public Klas()
         {
 
+        }
+        
+        public void Test()
+        {
+            int a = 1 + 1;
         }
     }
 }

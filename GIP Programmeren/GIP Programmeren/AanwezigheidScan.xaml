@@ -6,14 +6,18 @@
         xmlns:local="clr-namespace:GIP_Programmeren"
         mc:Ignorable="d"
         Title="AanwezigheidScan" Height="720" Width="1280">
-	<Grid>
-		<Image Name="imgFotoMain" HorizontalAlignment="Left" Height="596" Margin="30,37,0,0" VerticalAlignment="Top" Width="426"/>
-		<Image Name="imgFoto1" HorizontalAlignment="Left" Height="151" Margin="881,31,0,0" VerticalAlignment="Top" Width="309"/>
-		<Image x:Name="imgFoto2" HorizontalAlignment="Left" Height="150" Margin="881,182,0,0" VerticalAlignment="Top" Width="309"/>
-		<Image x:Name="imgFoto3" HorizontalAlignment="Left" Height="150" Margin="881,332,0,0" VerticalAlignment="Top" Width="309"/>
-		<Image x:Name="imgFoto4" HorizontalAlignment="Left" Height="151" Margin="881,482,0,0" VerticalAlignment="Top" Width="309"/>
-		<Label Name="lblNaam" Content="" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top" FontSize="36"/>
-		<Label x:Name="lblKlas" Content="" HorizontalAlignment="Left" Margin="479,171,0,0" VerticalAlignment="Top" FontSize="36"/>
+    <Grid>
+        <Image Name="imgFotoMain" HorizontalAlignment="Left" Height="596" Margin="30,37,0,0" VerticalAlignment="Top" Width="426"/>
+        <Image Name="imgFoto1" HorizontalAlignment="Left" Height="151" Margin="881,31,0,0" VerticalAlignment="Top" Width="309"/>
+        <Image x:Name="imgFoto2" HorizontalAlignment="Left" Height="150" Margin="881,182,0,0" VerticalAlignment="Top" Width="309"/>
+        <Image x:Name="imgFoto3" HorizontalAlignment="Left" Height="150" Margin="881,332,0,0" VerticalAlignment="Top" Width="309"/>
+        <Image x:Name="imgFoto4" HorizontalAlignment="Left" Height="151" Margin="881,482,0,0" VerticalAlignment="Top" Width="309"/>
+        <Label Name="lblNaam" Content="" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="lblKlas" Content="" HorizontalAlignment="Left" Margin="479,171,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Button Name="btnFotoVerplaatsen" Content="Foto's" HorizontalAlignment="Left" Margin="527,70,0,0" VerticalAlignment="Top" Width="75" Click="btnFotoVerplaatsen_Click"/>
+        <TextBox Name="txtImage" HorizontalAlignment="Left" Height="23" Margin="527,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="756,229,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
+
 </Window>
