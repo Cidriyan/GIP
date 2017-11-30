@@ -43,6 +43,23 @@ namespace GIP_Programmeren
             conn.Close();
         }
 
+        public void OpvullenAanwezigheidsListBox()
+        {
+            string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
+            MySqlConnection conn = new MySqlConnection(_conn);
+            conn.Open();
+            string _cmd = string.Format("SELECT * from aanwezigheidslijst");
+            MySqlCommand cmd = new MySqlCommand(_cmd, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Aanwezigheid objAanwezigheid = new Aanwezigheid((DateTime)dr[0], dr[1].ToString());
+                lstLeerlingAanwezigheid.Items.Add(objAanwezigheid);
+            }
+
+            conn.Close();
+        }
+
         private void UpdateDBStatus(String _CkStatus,Leerling _objLeerling)
         {
             string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
@@ -56,7 +73,25 @@ namespace GIP_Programmeren
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            /*Aanwezigheid objAanwezigheid = 
+            switch (objAanwezigheid.strStatusId)
+            {
+                case "1":
+                    rbAanwezig.IsChecked = true;
+                    break;
+
+                case "2":
+                    rbTeLaat.IsChecked = true;
+                    break;
+
+                case "3":
+                    rbTeLaatReden.IsChecked = true;
+                    break;
+
+                case "4":
+                    rbAfwezig.IsChecked = true;
+                    break;
+            }*/
         }
 
         private void txtZoekNaam_KeyUp(object sender, KeyEventArgs e)
@@ -127,6 +162,11 @@ namespace GIP_Programmeren
             {
                 UpdateDBStatus("4", objLeerling);
             }
+        }
+
+        private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

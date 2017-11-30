@@ -8,9 +8,30 @@ namespace GIP_Programmeren
 {
     class Aanwezigheid
     {
-        DateTime AankomstTijd;
-        String StatusId;
+        DateTime _aankomsttijd;
+        String _statusid;
 
+        public DateTime dtAankomstTijd
+        {
+            get { return _aankomsttijd; }
+            set { _aankomsttijd = value; }
+        }
 
+        public string strStatusId
+        {
+            get { return _statusid; }
+            set { _statusid = value; }
+        }
+
+        public Aanwezigheid(DateTime aankomsttijd, String statusid)
+        {
+            _aankomsttijd = aankomsttijd;
+            _statusid = statusid;
+        }
+
+        public Aanwezigheid()
+        {
+
+        }
     }
 }

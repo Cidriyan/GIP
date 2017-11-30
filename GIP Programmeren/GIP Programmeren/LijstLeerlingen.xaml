@@ -8,12 +8,13 @@
         Title="LijstLeerlingen" Height="780" Width="1280">
     <Grid>
         <ListBox Name="lstLeerlingenLijst" HorizontalAlignment="Left" Height="655" Margin="10,84,0,0" VerticalAlignment="Top" Width="568" SelectionChanged="ListBox_SelectionChanged"/>
-        <RadioButton Name="rbAanwezig" Content="Aanwezig" HorizontalAlignment="Left" Margin="695,84,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked"/>
-        <RadioButton Name="rbTeLaat" Content="Te Laat" HorizontalAlignment="Left" Margin="695,104,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked_1"/>
-        <RadioButton Name="rbTeLaatReden" Content="Te Laat met reden" HorizontalAlignment="Left" Margin="695,124,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked_2"/>
-        <Label Name="lblLeerlingNaam" Content="" HorizontalAlignment="Left" Margin="695,53,0,0" VerticalAlignment="Top"/>
-        <RadioButton Name="rbAfwezig" Content="Afwezig" HorizontalAlignment="Left" Margin="695,144,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked_3"/>
+        <RadioButton Name="rbAanwezig" Content="Aanwezig" HorizontalAlignment="Left" Margin="1114,136,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked"/>
+        <RadioButton Name="rbTeLaat" Content="Te Laat" HorizontalAlignment="Left" Margin="1114,156,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked_1"/>
+        <RadioButton Name="rbTeLaatReden" Content="Te Laat met reden" HorizontalAlignment="Left" Margin="1114,176,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked_2"/>
+        <Label Name="lblLeerlingNaam" Content="" HorizontalAlignment="Left" Margin="1114,106,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rbAfwezig" Content="Afwezig" HorizontalAlignment="Left" Margin="1114,196,0,0" VerticalAlignment="Top" GroupName="Status" Checked="RadioButton_Checked_3"/>
         <TextBox Name="txtZoekNaam" HorizontalAlignment="Left" Height="22" Margin="91,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" KeyUp="txtZoekNaam_KeyUp"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+        <ListBox Name="lstLeerlingAanwezigheid" HorizontalAlignment="Left" Height="655" Margin="602,84,0,0" VerticalAlignment="Top" Width="490" SelectionChanged="ListBox_SelectionChanged_1"/>
     </Grid>
 </Window>
