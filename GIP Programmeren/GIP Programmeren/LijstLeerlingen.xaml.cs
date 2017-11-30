@@ -43,6 +43,23 @@ namespace GIP_Programmeren
             conn.Close();
         }
 
+        private void OpvullenAanwezigheidsListBox(Leerling _objLeerling)
+        {
+            string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
+            MySqlConnection conn = new MySqlConnection(_conn);
+            conn.Open();
+            string _cmd = string.Format("SELECT * from aanwezigheidslijst where Leerling_idLeerlingen = {0}",_objLeerling.strIdnummer);
+            MySqlCommand cmd = new MySqlCommand(_cmd, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Aanwezigheid objAanwezigheid = new Aanwezigheid(dr[0].ToString(),dr[1].ToString(),dr[2].ToString(), dr[3].ToString());
+                lstLeerlingAanwezigheid.Items.Add(objAanwezigheid);
+            }
+
+            conn.Close();
+        }
+
         private void UpdateDBStatus(String _CkStatus,Leerling _objLeerling)
         {
             string _conn = string.Format("server=84.196.202.210;user id=Denzel;database=arduino;password={0}", "Denzel");
@@ -56,7 +73,10 @@ namespace GIP_Programmeren
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
+            lstLeerlingAanwezigheid.Items.Clear();
+            Leerling objLeerling = (Leerling)lstLeerlingenLijst.SelectedItem;
+            OpvullenAanwezigheidsListBox(objLeerling);
         }
 
         private void txtZoekNaam_KeyUp(object sender, KeyEventArgs e)
@@ -126,6 +146,37 @@ namespace GIP_Programmeren
             else
             {
                 UpdateDBStatus("4", objLeerling);
+            }
+        }
+
+        private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            rbAanwezig.IsChecked = false;
+            rbTeLaat.IsChecked = false;
+            rbTeLaatReden.IsChecked = false;
+            rbAfwezig.IsChecked = false;
+            Aanwezigheid objAanwezigheid = (Aanwezigheid)lstLeerlingAanwezigheid.SelectedItem;
+            if (objAanwezigheid == null)
+            {
+                return;
+            }
+            switch (objAanwezigheid.strStatusId)
+            {
+                case "1":
+                    rbAanwezig.IsChecked = true;
+                    break;
+
+                case "2":
+                    rbTeLaat.IsChecked = true;
+                    break;
+
+                case "3":
+                    rbTeLaatReden.IsChecked = true;
+                    break;
+
+                case "4":
+                    rbAfwezig.IsChecked = true;
+                    break;
             }
         }
     }

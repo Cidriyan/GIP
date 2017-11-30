@@ -31,6 +31,7 @@ namespace GIP_Programmeren
             strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Data/LeerlingFoto's/", "TestFoto.png");
             Uri imageUri = new Uri(strPath);
             imgFotoMain.Source = new BitmapImage(imageUri);
+            AMain();
         }
 
         public void FotoVerplaatsen()
@@ -59,56 +60,71 @@ namespace GIP_Programmeren
 
 
 
-
-        public delegate void NoArgDelegate();
-        static SerialPort Sp;
-        string portName = "COM7";
-        string data;
+        
+         SerialPort Sp;
+         string data;
+         string portName = "COM3";
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            using (Sp = new SerialPort())
-            {
-                ;
-                Sp.Close();
-                Sp.PortName = portName;
-                Sp.BaudRate = 115200;
-                Sp.Parity = Parity.None;
-                Sp.StopBits = StopBits.One;
-                Sp.DataBits = 8;
-                Sp.Handshake = Handshake.None;
-                Sp.DtrEnable = true;
-                
-                if (Sp.IsOpen == true)
+            //    using (Sp = new SerialPort())
+            //    {
 
-                {
-                    Sp.Close();
-                }
-                Sp.Open();
-                Sp.DataReceived += new SerialDataReceivedEventHandler(_OnDataRecieved);
+            //        Sp.PortName = portName;
+            //        Sp.BaudRate = 9600;
+            //        Sp.Parity = Parity.None;
+            //        Sp.StopBits = StopBits.One;
+            //        Sp.DataBits = 8;
+            //        Sp.Handshake = Handshake.None;
+            //        Sp.DtrEnable = true;
+            //        if (Sp.IsOpen == true)
+            //        {
+            //            Sp.Close();
+            //        }
+            //        Sp.Open();
+            //        Sp.DataReceived +=  new SerialDataReceivedEventHandler(_OnDataRecieved);
 
-            }
+            //    }
         }
 
+        public void AMain()
+        {
 
+            ThreadPool.SetMinThreads(2, 4);
+            Sp = new SerialPort();
+            Sp.PortName = portName;
+            Sp.BaudRate = 9600;
+            Sp.Parity = Parity.None;
+            Sp.StopBits = StopBits.One;
+            Sp.DataBits = 8;
+            Sp.Handshake = Handshake.RequestToSend;
+            Sp.DtrEnable = true;
+            Sp.RtsEnable = true;
+            if (Sp.IsOpen == true)
+            {
+                Sp.Close();
+            }
+            //Sp.Open();
+            Sp.DataReceived += new SerialDataReceivedEventHandler(_OnDataRecieved);
+            Sp.Open();
+            
+        }
 
 
         private void _OnDataRecieved(object sender, SerialDataReceivedEventArgs e)
         {
-            base.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Send, (NoArgDelegate)delegate
             {
                 SerialPort Sp = (SerialPort)sender;
-                data = Sp.ReadLine();
-                txtImage.Text = "K";
+                data = Sp.ReadExisting();
                 txtImage.Text = data;
-            });
+            };
 
 
-
+            
 
             
         }
         
-
+        
         
     }
 }
