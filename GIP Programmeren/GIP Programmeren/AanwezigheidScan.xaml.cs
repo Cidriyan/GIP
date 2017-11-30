@@ -31,7 +31,6 @@ namespace GIP_Programmeren
             strPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Data/LeerlingFoto's/", "TestFoto.png");
             Uri imageUri = new Uri(strPath);
             imgFotoMain.Source = new BitmapImage(imageUri);
-            AMain();
         }
 
         public void FotoVerplaatsen()
@@ -60,12 +59,12 @@ namespace GIP_Programmeren
 
 
 
+        public delegate void NoArgDelegate();
+        SerialPort Sp;
+        string data;
+        int intData;
+        string portName = "COM3";
         
-         SerialPort Sp;
-         string data;
-         string portName = "COM3";
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             //    using (Sp = new SerialPort())
             //    {
 
@@ -84,9 +83,7 @@ namespace GIP_Programmeren
             //        Sp.DataReceived +=  new SerialDataReceivedEventHandler(_OnDataRecieved);
 
             //    }
-        }
-
-        public void AMain()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
             ThreadPool.SetMinThreads(2, 4);
@@ -96,14 +93,13 @@ namespace GIP_Programmeren
             Sp.Parity = Parity.None;
             Sp.StopBits = StopBits.One;
             Sp.DataBits = 8;
-            Sp.Handshake = Handshake.RequestToSend;
+            Sp.Handshake = Handshake.None;
             Sp.DtrEnable = true;
             Sp.RtsEnable = true;
             if (Sp.IsOpen == true)
             {
                 Sp.Close();
             }
-            //Sp.Open();
             Sp.DataReceived += new SerialDataReceivedEventHandler(_OnDataRecieved);
             Sp.Open();
             
@@ -112,16 +108,17 @@ namespace GIP_Programmeren
 
         private void _OnDataRecieved(object sender, SerialDataReceivedEventArgs e)
         {
-            {
-                SerialPort Sp = (SerialPort)sender;
-                data = Sp.ReadExisting();
-                txtImage.Text = data;
-            };
+            base.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Send, (NoArgDelegate)delegate
+                {
+                    SerialPort Sp = (SerialPort)sender;
+                    intData = Sp.ReadExisting();
+                    txtSP.Text = intData.ToString();
+                });
 
 
-            
 
-            
+
+
         }
         
         

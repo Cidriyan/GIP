@@ -12,11 +12,12 @@
         <Image x:Name="imgFoto2" HorizontalAlignment="Left" Height="150" Margin="881,182,0,0" VerticalAlignment="Top" Width="309"/>
         <Image x:Name="imgFoto3" HorizontalAlignment="Left" Height="150" Margin="881,332,0,0" VerticalAlignment="Top" Width="309"/>
         <Image x:Name="imgFoto4" HorizontalAlignment="Left" Height="151" Margin="881,482,0,0" VerticalAlignment="Top" Width="309"/>
-        <Label Name="lblNaam" Content="" HorizontalAlignment="Left" Margin="789,85,0,0" VerticalAlignment="Top" FontSize="36" Width="322" Height="97"/>
+        <Label Name="lblNaam" Content="" HorizontalAlignment="Left" Margin="479,103,0,0" VerticalAlignment="Top" FontSize="36" Width="43" Height="68"/>
         <Label x:Name="lblKlas" Content="" HorizontalAlignment="Left" Margin="479,171,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Button Name="btnFotoVerplaatsen" Content="Foto's" HorizontalAlignment="Left" Margin="527,70,0,0" VerticalAlignment="Top" Width="75" Click="btnFotoVerplaatsen_Click"/>
         <TextBox Name="txtImage" HorizontalAlignment="Left" Height="23" Margin="527,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="756,229,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox Name="txtSP" HorizontalAlignment="Left" Height="23" Margin="522,423,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 
