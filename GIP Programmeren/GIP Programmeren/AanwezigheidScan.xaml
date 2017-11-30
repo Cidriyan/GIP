@@ -19,9 +19,5 @@
         <Button Content="Button" HorizontalAlignment="Left" Margin="756,229,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
-    <Window.Resources>
-        <XmlDataProvider x:Key="ComPorts" Source="CommsData.xml" XPath="/Comms/Ports" />
-        <XmlDataProvider x:Key="ComSpeed" Source="CommsData.xml" XPath="/Comms/Baud" />
-    </Window.Resources>
-    
+
 </Window>

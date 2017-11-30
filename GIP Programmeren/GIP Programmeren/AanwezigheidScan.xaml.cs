@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -61,15 +62,30 @@ namespace GIP_Programmeren
 
         public delegate void NoArgDelegate();
         static SerialPort Sp;
-        string portName = "COM4";
+        string portName = "COM7";
         string data;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Sp = new SerialPort();
-            Sp.PortName = portName;
-            Sp.BaudRate = 9600;
-            Sp.Open();
-            Sp.DataReceived += this._OnDataRecieved;
+            using (Sp = new SerialPort())
+            {
+                ;
+                Sp.Close();
+                Sp.PortName = portName;
+                Sp.BaudRate = 115200;
+                Sp.Parity = Parity.None;
+                Sp.StopBits = StopBits.One;
+                Sp.DataBits = 8;
+                Sp.Handshake = Handshake.None;
+                
+                if (Sp.IsOpen == true)
+
+                {
+                    Sp.Close();
+                }
+                Sp.Open();
+                Sp.DataReceived += new SerialDataReceivedEventHandler(_OnDataRecieved);
+
+            }
         }
 
 
@@ -79,26 +95,18 @@ namespace GIP_Programmeren
         {
             base.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Send, (NoArgDelegate)delegate
             {
-                data = Sp.ReadExisting();
+                SerialPort Sp = (SerialPort)sender;
+                data = Sp.ReadLine();
+                txtImage.Text = "K";
                 txtImage.Text = data;
             });
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+            
         }
+        
 
         
     }
