@@ -76,6 +76,7 @@ namespace GIP_Programmeren
                 Sp.StopBits = StopBits.One;
                 Sp.DataBits = 8;
                 Sp.Handshake = Handshake.None;
+                Sp.DtrEnable = true;
                 
                 if (Sp.IsOpen == true)
 
