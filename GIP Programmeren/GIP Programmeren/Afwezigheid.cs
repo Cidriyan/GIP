@@ -27,7 +27,7 @@ namespace GIP_Programmeren
 
         public string strLeerlingid
         {
-            get { return _idleerling; }
+            get { return _idleerling }
             set { _idleerling = value; }
         }
 
@@ -54,5 +54,5 @@ namespace GIP_Programmeren
         {
 
         }
-    }
+    
 }
