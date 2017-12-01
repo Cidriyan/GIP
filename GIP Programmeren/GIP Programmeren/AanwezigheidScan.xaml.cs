@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO.Ports;
 
 namespace GIP_Programmeren
 {
@@ -53,5 +55,73 @@ namespace GIP_Programmeren
         {
             FotoVerplaatsen();
         }
+
+
+
+
+        public delegate void NoArgDelegate();
+        SerialPort Sp;
+        string data;
+        int intData;
+        string portName = "COM3";
+        
+            //    using (Sp = new SerialPort())
+            //    {
+
+            //        Sp.PortName = portName;
+            //        Sp.BaudRate = 9600;
+            //        Sp.Parity = Parity.None;
+            //        Sp.StopBits = StopBits.One;
+            //        Sp.DataBits = 8;
+            //        Sp.Handshake = Handshake.None;
+            //        Sp.DtrEnable = true;
+            //        if (Sp.IsOpen == true)
+            //        {
+            //            Sp.Close();
+            //        }
+            //        Sp.Open();
+            //        Sp.DataReceived +=  new SerialDataReceivedEventHandler(_OnDataRecieved);
+
+            //    }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            ThreadPool.SetMinThreads(2, 4);
+            Sp = new SerialPort();
+            Sp.PortName = portName;
+            Sp.BaudRate = 9600;
+            Sp.Parity = Parity.None;
+            Sp.StopBits = StopBits.One;
+            Sp.DataBits = 8;
+            Sp.Handshake = Handshake.None;
+            Sp.DtrEnable = true;
+            Sp.RtsEnable = true;
+            if (Sp.IsOpen == true)
+            {
+                Sp.Close();
+            }
+            Sp.DataReceived += new SerialDataReceivedEventHandler(_OnDataRecieved);
+            Sp.Open();
+            
+        }
+
+
+        private void _OnDataRecieved(object sender, SerialDataReceivedEventArgs e)
+        {
+            base.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Send, (NoArgDelegate)delegate
+                {
+                    SerialPort Sp = (SerialPort)sender;
+                    intData = Sp.ReadExisting();
+                    txtSP.Text = intData.ToString();
+                });
+
+
+
+
+
+        }
+        
+        
+        
     }
 }
